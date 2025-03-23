@@ -17,8 +17,18 @@
   </div>
 
   <div class="my-5">
+    <%= form.label :birth %>
+    <%= form.date_field :birth, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": profile.errors[:birth].none?, "border-red-400 focus:outline-red-600": profile.errors[:birth].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :address %>
+    <%= form.text_area :address, rows: 4, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": profile.errors[:address].none?, "border-red-400 focus:outline-red-600": profile.errors[:address].any?}] %>
+  </div>
+
+  <div class="my-5">
     <%= form.label :icon %>
-    <%= form.text_field :icon, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": profile.errors[:icon].none?, "border-red-400 focus:outline-red-600": profile.errors[:icon].any?}] %>
+    <%= form.file_field :icon, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": profile.errors[:icon].none?, "border-red-400 focus:outline-red-600": profile.errors[:icon].any?}] %>
   </div>
 
   <div class="inline">

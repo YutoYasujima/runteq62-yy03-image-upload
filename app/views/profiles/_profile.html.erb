@@ -4,7 +4,18 @@
     <%= profile.name %>
   </div>
   <div>
+    <strong class="block font-medium mb-1">Birth:</strong>
+    <%= profile.birth %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Address:</strong>
+    <%= profile.address %>
+  </div>
+  <div>
     <strong class="block font-medium mb-1">Icon:</strong>
-    <%= profile.icon %>
+    <%= link_to profile.icon.filename, profile.icon, class: "text-gray-700 underline hover:no-underline" if profile.icon.attached? %>
+    <% if profile.icon.attached? %>
+      <%= image_tag profile.icon %>
+    <% end %>
   </div>
 </div>
